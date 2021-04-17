@@ -1,10 +1,9 @@
 <div>
   Favorite!
-  <span
-    class="glyphicon"
-    [class.glyphicon-star]="isFavorite"
-    [class.glyphicon-star-empty]="!isFavorite"
+  <fa-icon
+    size="3x"
+    class="my-icon"
     (click)="onClick()"
-  >
-  </span>
+    [icon]="isFavorite ? favStar : unFavStar"
+  ></fa-icon>
 </div>

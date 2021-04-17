@@ -8,10 +8,12 @@ import { CoursesComponent } from './courses.components';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
-  declarations: [AppComponent, CoursesComponent, CourseComponent, SummaryPipe, FavoriteComponent],
-  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent, CoursesComponent, CourseComponent, SummaryPipe, FavoriteComponent, PanelComponent],
+  imports: [BrowserModule, FormsModule, FontAwesomeModule],
   providers: [CoursesService],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-favorite',
@@ -6,13 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./favorite.component.css'],
 })
 export class FavoriteComponent implements OnInit {
-  @Input() isFavorite: boolean;
-
+  @Input("is-favorite") isFavorite: boolean;
+  @Output() change = new EventEmitter();
+  favStar = faStarSolid;
+  unFavStar = faStar;
+  
   constructor() {}
 
   ngOnInit(): void {}
 
   onClick() {
-    this.isFavorite = this.isFavorite;
+    this.isFavorite = !this.isFavorite;
+    this.change.emit({ newValue: this.isFavorite})
   }
 }
