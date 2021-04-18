@@ -12,6 +12,7 @@ export class AppComponent {
     title: 'Title',
     isFavorite: true,
   };
+  selected = 'option1';
 
   onFavoriteChanged(eventArgs): void {
     console.log('Favorite changed!', eventArgs)

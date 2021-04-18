@@ -1,28 +1,67 @@
 <h1>Angular</h1>
-<app-courses></app-courses>
-<app-course></app-course>
+<div class="container">
+  <app-courses></app-courses>
+  <app-course></app-course>
+</div>
 
-<app-favorite
-  [is-favorite]="post.isFavorite"
-  (change)="onFavoriteChanged($event)"
-></app-favorite>
+<div class="container">
+  <app-favorite
+    [is-favorite]="post.isFavorite"
+    (change)="onFavoriteChanged($event)"
+  ></app-favorite>
+</div>
 
-<bootstrap-panel>
-  <div class="title">My new title</div>
-  <div class="text">Text about me</div>
-</bootstrap-panel>
+<div class="container">
+  <bootstrap-panel>
+    <div class="title">My new title</div>
+    <div class="text">Text about me</div>
+  </bootstrap-panel>
+</div>
 
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link" [class.active]="viewMode == 'map'" (click)="viewMode = 'map'">MapView</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" [class.active]="viewMode == 'list'" (click)="viewMode = 'list'">List View</a>
-  </li>
-</ul>
+<div class="container">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [class.active]="viewMode == 'map'"
+        (click)="viewMode = 'map'"
+        >MapView</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [class.active]="viewMode == 'list'"
+        (click)="viewMode = 'list'"
+        >List View</a
+      >
+    </li>
+  </ul>
 
-<div [ngSwitch]="viewMode">
-  <div *ngSwitchCase="'map'">Map View Content</div>
-  <div *ngSwitchCase="'list'">List View Content</div>
-  <div *ngSwitchDefault>Otherwise</div>
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+  </div>
+</div>
+
+<div class="container">
+  <h6>Custom Directive to format input to lowercase/upper case</h6>
+  <mat-form-field appearance="fill" class="mr-2">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option>None</mat-option>
+      <mat-option value="lowercase">Lowercase</mat-option>
+      <mat-option value="uppercase">Uppercase</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- <mat-form-field class="example-full-width">
+    
+  </mat-form-field>
+-->
+  <mat-form-field class="example-full-width">
+    <mat-label>Enter Text</mat-label>
+    <input matInput type="text" [appInputFormat]="selected" />
+  </mat-form-field>
 </div>
