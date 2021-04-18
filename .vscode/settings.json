@@ -1,0 +1,8 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.disableLanguages": [
+        ".ejs",
+        "*.ejs"
+    ],
+    "editor.formatOnSave": true
+}

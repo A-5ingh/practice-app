@@ -16,9 +16,10 @@ import { InputFormatDirective } from './directive/input-format.directive';
 import {MatInputModule} from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
-  declarations: [AppComponent, CoursesComponent, CourseComponent, SummaryPipe, FavoriteComponent, PanelComponent, InputFormatDirective],
+  declarations: [AppComponent, CoursesComponent, CourseComponent, SummaryPipe, FavoriteComponent, PanelComponent, InputFormatDirective, ContactFormComponent],
   imports: [BrowserModule, FormsModule, FontAwesomeModule, MatSelectModule, MatFormFieldModule, BrowserAnimationsModule, MatFormFieldModule, MatInputModule],
   providers: [CoursesService],
   bootstrap: [AppComponent],
